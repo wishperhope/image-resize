@@ -10,6 +10,7 @@ WORKDIR /app
 # Copy the source from the current directory to the Working Directory inside the container
 COPY . .
 
+# Deps for building
 RUN apt-get update -y && apt-get install dh-autoreconf nasm cmake libpng-tools libpng-dev -y
 
 RUN deps/build-deps-linux.sh
@@ -37,8 +38,6 @@ COPY --from=builder /app/main .
 
 # Copy ENV 
 COPY --from=builder /app/.env .
-
-RUN mkdir -p uploads/
 
 # Command to run the executable
 CMD ["./main"] 
