@@ -46,3 +46,9 @@ You can replicate the micro services if necessary, make sure storage volume is r
 ```json
 docker-compose up --scale image-resize=5
 ```
+
+### License
+
+lilliput contains the source and compiled binaries from a number
+of other libraries. The full licenses of these libraries are contained in lilliput repository under
+third-party-licenses/.
