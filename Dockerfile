@@ -38,5 +38,7 @@ COPY --from=builder /app/main .
 # Copy ENV 
 COPY --from=builder /app/.env .
 
+RUN mkdir -p uploads/
+
 # Command to run the executable
 CMD ["./main"] 
